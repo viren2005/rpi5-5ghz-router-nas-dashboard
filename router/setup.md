@@ -41,3 +41,10 @@ hostapd, iptables, and monitoring tools.
 
 Users following this guide should verify interface names using
 standard Linux networking tools before proceeding.
+
+### Security Note
+
+All configuration files use placeholder SSIDs and passwords.
+Users must change these values before deployment.
+
+Never commit real credentials to version control.
