@@ -1,0 +1,13 @@
+[Unit]
+Description=Wi-Fi Analytics Dashboard
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/wifi/wifi-dashboard/app/dashboard.py
+WorkingDirectory=/home/wifi/wifi-dashboard/app
+Restart=always
+User=wifi
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
