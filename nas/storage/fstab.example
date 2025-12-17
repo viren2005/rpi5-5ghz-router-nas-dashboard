@@ -1,0 +1,8 @@
+# Example fstab entry for external USB storage
+#
+# This entry mounts a USB storage device at /mnt/HDD
+# with ownership assigned to a non-root user.
+#
+# Replace <UUID> with the actual UUID of your device.
+
+UUID=<UUID>   /mnt/HDD   vfat   uid=1000,gid=1000,umask=000,noatime,utf8=1   0   0
