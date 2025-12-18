@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div class="card">
+  <h2>Files: /mnt/HDD{% if curpath %}/{{ curpath }}{% endif %}</h2>
+
+  {% if parent %}
+    <a href="{{ url_for('files', subpath=parent) }}">⬆ Parent</a>
+  {% elif curpath %}
+    <a href="{{ url_for('files') }}">⬆ Root</a>
+  {% endif %}
+
+  <br><br>
+
+  {% if entries %}
+    <table>
+      <tr><th>Name</th><th>Type</th><th>Size</th><th>Action</th></tr>
+
+      {% for e in entries %}
+      <tr>
+        <td>{{ e.name }}</td>
+        <td>{{ 'Folder' if e.is_dir else 'File' }}</td>
+        <td>{{ e.size if e.size else '-' }}</td>
+        <td>
+          <a href="{{ url_for('files', subpath=e.relpath) }}">
+            {{ "Open" if e.is_dir else "Download" }}
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>No files found.</p>
+  {% endif %}
+</div>
+
+{% endblock %}
