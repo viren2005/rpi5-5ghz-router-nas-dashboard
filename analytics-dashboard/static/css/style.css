@@ -1,0 +1,29 @@
+body {
+  background: #0d1117;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.nav a {
+  color: #58a6ff;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.card {
+  background: #161b22;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  border-bottom: 1px solid #30363d;
+}
