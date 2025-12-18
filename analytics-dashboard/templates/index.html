@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div class="card">
+  <h2>RSSI Logging</h2>
+  <button onclick="startLog()">Start Logging</button>
+  <button onclick="stopLog()">Stop Logging</button>
+  <p id="log-status"></p>
+</div>
+
+<div id="ap-box" class="card"></div>
+<div id="stations-container"></div>
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+{% endblock %}
